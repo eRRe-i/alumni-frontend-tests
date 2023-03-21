@@ -740,6 +740,11 @@ select {
   margin-right: auto;
 }
 
+.-mx-2 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
 .-mb-px {
   margin-bottom: -1px;
 }
@@ -794,6 +799,10 @@ select {
 
 .mt-6 {
   margin-top: 1.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .block {
@@ -860,6 +869,10 @@ select {
   height: 100vh;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
 .min-h-\[50\%\] {
   min-height: 50%;
 }
@@ -918,6 +931,10 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .min-w-0 {
@@ -1002,6 +1019,10 @@ select {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -1032,6 +1053,10 @@ select {
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-x-3 {
@@ -1154,6 +1179,10 @@ select {
   border-bottom-width: 2px;
 }
 
+.border-t {
+  border-top-width: 1px;
+}
+
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -1176,6 +1205,11 @@ select {
 
 .border-transparent {
   border-color: transparent;
+}
+
+.border-cyan-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(21 94 117 / var(--tw-border-opacity));
 }
 
 .bg-blue-400 {
@@ -1223,8 +1257,9 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-opacity-25 {
-  --tw-bg-opacity: 0.25;
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-75 {
@@ -1278,8 +1313,12 @@ select {
           background-clip: text;
 }
 
-.bg-no-repeat {
-  background-repeat: no-repeat;
+.fill-cyan-600 {
+  fill: #0891b2;
+}
+
+.fill-cyan-700 {
+  fill: #0e7490;
 }
 
 .p-1 {
@@ -1292,6 +1331,10 @@ select {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-1 {
@@ -1317,6 +1360,11 @@ select {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .px-6 {
@@ -1349,9 +1397,9 @@ select {
   padding-bottom: 1rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pb-4 {
@@ -1384,6 +1432,14 @@ select {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .text-center {
@@ -1634,6 +1690,11 @@ select {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1647,6 +1708,11 @@ select {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -1800,6 +1866,18 @@ select {
     margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
   }
 
+  .sm\:divide-x > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-x-reverse: 0;
+    border-right-width: calc(1px * var(--tw-divide-x-reverse));
+    border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+  }
+
+  .sm\:divide-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-y-reverse: 0;
+    border-top-width: calc(0px * calc(1 - var(--tw-divide-y-reverse)));
+    border-bottom-width: calc(0px * var(--tw-divide-y-reverse));
+  }
+
   .sm\:border-t {
     border-top-width: 1px;
   }
@@ -1809,9 +1887,9 @@ select {
     border-color: rgb(229 231 235 / var(--tw-border-opacity));
   }
 
-  .sm\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .sm\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .sm\:py-1 {
@@ -1824,9 +1902,9 @@ select {
     padding-bottom: 0.375rem;
   }
 
-  .sm\:px-5 {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .sm\:pt-1 {
@@ -1925,14 +2003,14 @@ select {
     padding: 0.25rem;
   }
 
-  .lg\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .lg\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .lg\:pl-64 {

@@ -78,7 +78,9 @@
                 })
 
                 @!component('alumni/components/header/profile-card', {
-                loggedUser : ({...loggedUser})
+                loggedUser : ({...loggedUser}),
+                user: ({...user}),
+                userLinks: ({...userLinks})
                 })
 
                 @!section('content')

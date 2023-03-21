@@ -1,40 +1,17 @@
 @layout('alumni/layouts/base')
 
-
-
 @section('content')
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-<!--
-  This example requires updating your template:
 
-  ```
-  <html class="h-full bg-white">
-  <body class="h-full overflow-hidden">
-  ```
--->
-<!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+<!-- MULTITAB -->
 <div class="flex min-w-0 flex-start flex-col overflow-hidden">
   <article>
     <div class="mt-6 sm:mt-2 2xl:mt-5">
       <div class="border-b border-gray-200">
-        <div class="max-w-5xl px-5 sm:px-5 lg:px-5">
+        <div class="max-w-5xl px-6 sm:px-6 lg:px-6">
           <nav class="-mb-px flex space-x-8" aria-label="Tabs">
             <!-- Current: "border-pink-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
             <a href="#"
-              class="border-sky-600 text-gray-900 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium"
+              class="border-cyan-800 text-gray-900 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium"
               aria-current="page">Perfil</a>
 
             <a href="#"
@@ -50,46 +27,23 @@
     </div>
 
     <!-- Description list -->
-    <div class="mt-6 max-w-5xl px-5 sm:px-5 lg:px-5">
+    <div class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
       <dl class="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
+        
         <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Phone</dt>
-          <dd class="mt-1 test-base text-gray-900">(555) 123-4567</dd>
+          <dt class="test-base font-medium text-gray-500">Nome Completo</dt>
+          <dd class="mt-1 test-base text-gray-900">Leandro Bataglia Pereira</dd>
         </div>
 
         <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Email</dt>
-          <dd class="mt-1 test-base text-gray-900">ricardocooper@example.com</dd>
-        </div>
-
-        <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Title</dt>
-          <dd class="mt-1 test-base text-gray-900">Senior Front-End Developer</dd>
-        </div>
-
-        <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Team</dt>
-          <dd class="mt-1 test-base text-gray-900">Product Development</dd>
-        </div>
-
-        <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Location</dt>
-          <dd class="mt-1 test-base text-gray-900">San Francisco</dd>
-        </div>
-
-        <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Sits</dt>
-          <dd class="mt-1 test-base text-gray-900">Oasis, 4th floor</dd>
-        </div>
-
-        <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Salary</dt>
-          <dd class="mt-1 test-base text-gray-900">$145,000</dd>
-        </div>
-
-        <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Birthday</dt>
-          <dd class="mt-1 test-base text-gray-900">June 8, 1990</dd>
+          <dt class="test-base font-medium text-gray-500">Localização</dt>
+          <dd class="mt-1 test-base text-gray-900"> 
+            {{ user.city }} | 
+            @if(user.estado !==  null) 
+            {{ user.estado }} |
+            @end 
+            {{ user.country }}
+          </dd>
         </div>
 
         <div class="sm:col-span-2">

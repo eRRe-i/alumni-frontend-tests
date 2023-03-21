@@ -6,6 +6,7 @@ export interface User {
     job: string;
     city: string;
     estado: string;
+    country: string;
     isAdmin: boolean;
     avatarUrl: string | null;
 }
@@ -18,6 +19,7 @@ export const loggedUser: User = {
     job: 'Software Developer',
     city: 'Rio de Janeiro',
     estado: 'RJ',
+    country: 'Brazil',
     isAdmin: true,
     avatarUrl: './public/leandro.jpg',
 }
@@ -32,7 +34,8 @@ export const users: User[] = [
         isAdmin: true,
         city: 'Rio de Janeiro',
         estado: 'RJ',
-        avatarUrl: './leandro.jpg',
+        country: 'Brazil',
+        avatarUrl: './public/leandro.jpg',
     },
     {
         id: 1,
@@ -42,6 +45,7 @@ export const users: User[] = [
         job: 'Software Developer',
         city: 'Rio de Janeiro',
         estado: 'RJ',
+        country: 'Brazil',
         isAdmin: false,
         avatarUrl: './public/jp.png',
     },
@@ -53,6 +57,7 @@ export const users: User[] = [
         job: 'Software Developer',
         city: 'Rio de Janeiro',
         estado: 'RJ',
+        country: 'Brazil',
         isAdmin: false,
         avatarUrl: null,
     },
@@ -64,7 +69,41 @@ export const users: User[] = [
         job: 'Software Developer',
         city: 'Rio de Janeiro',
         estado: 'RJ',
+        country: 'Brazil',
         isAdmin: false,
         avatarUrl: null,
     }
 ]
+
+export interface Links {
+    name: string;
+    link: string
+}
+
+export interface UserLinks {
+    userId: number;
+    profileLinks: Links[]
+}
+
+export const userLinks: UserLinks = {
+    
+    userId: 0,
+    profileLinks: [
+        {
+            name: "mail",
+            link: "https://www.linkedin.com/in/leandro-bataglia-bb23b321/"
+        },
+        {
+            name: "linkedin",
+            link: "https://www.linkedin.com/in/leandro-bataglia-bb23b321/"
+        },
+        {
+            name: "lattes",
+            link: "https://www.linkedin.com/in/leandro-bataglia-bb23b321/"
+        },
+        {
+            name: "github",
+            link: "https://www.linkedin.com/in/leandro-bataglia-bb23b321/"
+        }
+    ]
+}

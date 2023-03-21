@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import edge from 'edge.js'
 import { join } from 'path'
 
-import { loggedUser, users } from './Users'
+import { loggedUser, users, userLinks } from './Users'
 import { pathList } from './Paths';
 
 
@@ -28,7 +28,9 @@ app.get('/test-user', async (req: Request, res: Response) => {
 })
 app.get('/user-details', async (req: Request, res: Response) => {
     const data = await edge.render('alumni/user-details', {
-        loggedUser: loggedUser
+        loggedUser: users[1],
+        user: users[0],
+        userLinks: userLinks
     })
     res.send(data)
 })
