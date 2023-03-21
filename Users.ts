@@ -43,7 +43,7 @@ export const users: User[] = [
         city: 'Rio de Janeiro',
         estado: 'RJ',
         isAdmin: false,
-        avatarUrl: null,
+        avatarUrl: './public/jp.png',
     },
     {
         id: 2,

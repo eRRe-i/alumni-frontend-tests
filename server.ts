@@ -26,6 +26,12 @@ app.get('/test-user', async (req: Request, res: Response) => {
     })
     res.send(data)
 })
+app.get('/user-details', async (req: Request, res: Response) => {
+    const data = await edge.render('alumni/user-details', {
+        loggedUser: loggedUser
+    })
+    res.send(data)
+})
 app.get('*', async (req: Request, res: Response) => {
     const data = await edge.render('base/error', {
         pathList: pathList

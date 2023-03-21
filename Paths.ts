@@ -8,6 +8,10 @@ export const pathList = [
     {
         folder: "alumni",
         view: "/test-user"
+    },
+    {
+        folder: "alumni",
+        view: "/user-details"
     }
 ]
 
