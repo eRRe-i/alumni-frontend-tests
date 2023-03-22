@@ -22,43 +22,15 @@
             }
         })
     })
+    
     </script>
 </head>
 
 <body class="h-full">
     <div class="min-h-full">
-        <!--
-
-  ~~ checkpoints
-    
-    SIDEBAR--mobile
-    SIDEBAR--desktop
-
-    CONTENT
-    ~ HEADER
-        ~ TOPBAR
-        ~ PROFILE--desktop
-        ~ PROFILE--mobile
-    
-  tailwind config
-
-// @layout/forms precisa estar habilitado
-  tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-
-  ~~ atualização do template
-
--->
-        
 
         <div x-data="{open: $store.sidebar.open}">
-<div x-data="$store.sidebar">
+<div class="SIDEBAR">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
     <div class="SIDEBAR--mobile relative z-40 lg:hidden" role="dialog" aria-modal="true">
         <!--
@@ -334,8 +306,8 @@
     </div> <!-- SIDEBAR--desktop -->
 </div>
 
-            <div class="CONTENT relative flex flex-col lg:pl-64">
-<div class="HEADER--TOPBAR flex h-16 flex-shrink-0 border-b border-gray-200 bg-white lg:border-none">
+            <div class="relative flex flex-col lg:pl-64">
+<div class="TOPBAR flex h-16 flex-shrink-0 border-b border-gray-200 bg-white lg:border-none">
     <div class="h-44 pt-3 w-full lg:h-48 bg-gradient-to-r from-cyan-800 to-sky-600">
 
 
@@ -444,67 +416,66 @@
             </div>
         </div>
     </div> <!-- PROFILE -->
+              
 
-
-<!-- MULTITAB -->
 <div class="flex min-w-0 flex-start flex-col overflow-hidden">
-  <article>
-    <div class="mt-6 sm:mt-2 2xl:mt-5">
-      <div class="border-b border-gray-200">
-        <div class="max-w-5xl px-6 sm:px-6 lg:px-6">
-          <nav class="-mb-px flex space-x-8" aria-label="Tabs">
-            <!-- Current: "border-pink-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-            <a href="#"
-              class="border-cyan-800 text-gray-900 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium"
-              aria-current="page">Perfil</a>
-
-            <a href="#"
-              class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Profissional</a>
-
-            <a href="#"
-              class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Acadêmico</a>
-            <a href="#"
-              class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Certificados</a>
-          </nav>
+    <article>
+      <div class="mt-6 sm:mt-2 2xl:mt-5">
+        <div class="border-b border-gray-200">
+          <div class="max-w-5xl px-6 sm:px-6 lg:px-6">
+            <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+              <!-- Current: "border-pink-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+              <a href="#"
+                class="border-cyan-800 text-gray-900 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium"
+                aria-current="page">Perfil</a>
+  
+              <a href="#"
+                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Profissional</a>
+  
+              <a href="#"
+                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Acadêmico</a>
+              <a href="#"
+                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Certificados</a>
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Description list -->
-    <div class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
-      <dl class="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
-        
-        <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Nome Completo</dt>
-          <dd class="mt-1 test-base text-gray-900">Leandro Bataglia Pereira</dd>
-        </div>
-
-        <div class="sm:col-span-1">
-          <dt class="test-base font-medium text-gray-500">Localização</dt>
-          <dd class="mt-1 test-base text-gray-900"> 
-            Rio de Janeiro | 
-            RJ |
-            Brazil
-          </dd>
-        </div>
-
-        <div class="sm:col-span-2">
-          <dt class="test-base font-medium text-gray-500">About</dt>
-          <dd class="mt-1 max-w-prose space-y-5 test-base text-gray-900">
-            <p>Tincidunt quam neque in cursus viverra orci, dapibus nec tristique. Nullam ut sit dolor consectetur urna,
-              dui cras nec sed. Cursus risus congue arcu aenean posuere aliquam.</p>
-            <p>Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea rhoncus ac mauris amet. Urna, sem pretium
-              sit pretium urna, senectus vitae. Scelerisque fermentum, cursus felis dui suspendisse velit pharetra.
-              Augue et duis cursus maecenas eget quam lectus. Accumsan vitae nascetur pharetra rhoncus praesent dictum
-              risus suspendisse.</p>
-          </dd>
-        </div>
-      </dl>
-    </div>
-  </article>
-  </main>
-</div>
-</div>
+  
+      <!-- Description list -->
+      <div class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
+        <dl class="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
+          
+          <div class="sm:col-span-1">
+            <dt class="test-base font-medium text-gray-500">Nome Completo</dt>
+            <dd class="mt-1 test-base text-gray-900">Leandro Bataglia Pereira</dd>
+          </div>
+  
+          <div class="sm:col-span-1">
+            <dt class="test-base font-medium text-gray-500">Localização</dt>
+            <dd class="mt-1 test-base text-gray-900"> 
+              Rio de Janeiro | 
+              RJ |
+              Brazil
+            </dd>
+          </div>
+  
+          <div class="sm:col-span-2">
+            <dt class="test-base font-medium text-gray-500">About</dt>
+            <dd class="mt-1 max-w-prose space-y-5 test-base text-gray-900">
+              <p>Tincidunt quam neque in cursus viverra orci, dapibus nec tristique. Nullam ut sit dolor consectetur urna,
+                dui cras nec sed. Cursus risus congue arcu aenean posuere aliquam.</p>
+              <p>Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea rhoncus ac mauris amet. Urna, sem pretium
+                sit pretium urna, senectus vitae. Scelerisque fermentum, cursus felis dui suspendisse velit pharetra.
+                Augue et duis cursus maecenas eget quam lectus. Accumsan vitae nascetur pharetra rhoncus praesent dictum
+                risus suspendisse.</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+    </main>
+  </div>
+  </div>
 
             </div>
         </div>
