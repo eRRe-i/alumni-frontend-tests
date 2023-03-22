@@ -2,6 +2,29 @@
 
 @section('content')
 
-@include('alumni/partials/main/user-tabs')
+<main class="flex min-w-0 flex-start flex-col overflow-hidden">
+
+    <div class="mt-6 sm:mt-2 2xl:mt-5">
+        <div class="border-b border-gray-200">
+            <div class="max-w-5xl px-6 sm:px-6 lg:px-6">
+                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                    <!-- Current: "border-pink-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+                    <a href="#"
+                        class="border-cyan-800 text-gray-900 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium"
+                        aria-current="page">Perfil</a>
+
+                    <a href="#"
+                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Profissional</a>
+
+                    <a href="#"
+                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Acadêmico</a>
+                    <a href="#"
+                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Certificados</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    @include('alumni/partials/main/profile-tab')
+</main>
 
 @end
