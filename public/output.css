@@ -748,6 +748,11 @@ select {
   margin-right: auto;
 }
 
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .-mb-px {
   margin-bottom: -1px;
 }
@@ -882,6 +887,10 @@ select {
 
 .h-0\.5 {
   height: 0.125rem;
+}
+
+.h-2 {
+  height: 0.5rem;
 }
 
 .min-h-\[50\%\] {
@@ -1289,6 +1298,11 @@ select {
 .bg-sky-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(7 89 133 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-75 {

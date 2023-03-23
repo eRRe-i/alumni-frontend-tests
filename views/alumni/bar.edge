@@ -1,21 +1,27 @@
 @layout('alumni/layouts/base')
 
 @section('content')
-
-<div class="my-tabs mt-6 px-4">
-    <div class="my-tab active-tab">Profile</div>
-    <div class="my-tab">Professional</div>
-    <div class="my-tab">Academic</div>
-    <div class="underline-tab"></div>
+<div class="tab-container" x-data="{ activeTab: 'profile' }">
+    <div class="flex items-center relative mt-6 px-4">
+        <div class="my-tab p-3 cursor-pointer " :class="{ 'active-tab': activeTab === 'profile' }" @click="activeTab = 'profile'">Profile</div>
+        <div class="my-tab p-3 cursor-pointer" :class="{ 'active-tab': activeTab === 'professional' }" @click="activeTab = 'professional'">Professional</div>
+        <div class="my-tab p-3 cursor-pointer" :class="{ 'active-tab': activeTab === 'academic' }" @click="activeTab = 'academic'">Academic</div>
+        <div class="underline-tab"></div>
+    </div>
+    <div class="tab-content mt-5 mx-6">
+        <div x-show="activeTab === 'profile'" x-cloak>
+            <h2>Show this when Profile tab is active</h2>
+        </div>
+        <div x-show="activeTab === 'professional'" x-cloak>
+            <h2>Show this when Professional tab is active</h2>
+        </div>
+        <div x-show="activeTab === 'academic'" x-cloak>
+            <h2>Show this when Academic tab is active</h2>
+        </div>
+    </div>
 </div>
 
 <style>
-    .my-tabs {
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-
     .my-tab {
         padding: 10px;
         cursor: pointer;
@@ -33,10 +39,11 @@
         background-color: blue;
         transition: transform 0.3s;
     }
+    [x-cloak] { display: none !important; }
 </style>
 
 <script>
-const tabs = document.querySelectorAll('.my-tab');
+    const tabs = document.querySelectorAll('.my-tab');
 const underline = document.querySelector('.underline-tab');
 
 tabs.forEach(tab => {
