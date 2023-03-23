@@ -1,11 +1,11 @@
 @layout('alumni/layouts/base')
 
 @section('content')
-<div class="tab-container" x-data="{ activeTab: 'profile' }">
+<div class="tab-container" x-data="{ activeTab: 'profile'}">
     <div class="flex items-center relative mt-6 px-4">
-        <div class="my-tab p-3 cursor-pointer " :class="{ 'active-tab': activeTab === 'profile' }" @click="activeTab = 'profile'">Profile</div>
-        <div class="my-tab p-3 cursor-pointer" :class="{ 'active-tab': activeTab === 'professional' }" @click="activeTab = 'professional'">Professional</div>
-        <div class="my-tab p-3 cursor-pointer" :class="{ 'active-tab': activeTab === 'academic' }" @click="activeTab = 'academic'">Academic</div>
+        <div class="my-tab p-3 cursor-pointer" @click="activeTab = 'profile'">Profile</div>
+        <div class="my-tab p-3 cursor-pointer"  @click="activeTab = 'professional'">Professional</div>
+        <div class="my-tab p-3 cursor-pointer"  @click="activeTab = 'academic'">Academic</div>
         <div class="underline-tab"></div>
     </div>
     <div class="tab-content mt-5 mx-6">
@@ -48,12 +48,6 @@ const underline = document.querySelector('.underline-tab');
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    // Remove the active class from all tabs
-    tabs.forEach(tab => tab.classList.remove('active-tab'));
-
-    // Add the active class to the clicked tab
-    tab.classList.add('active-tab');
-
     // Move the underline to the clicked tab
     const tabWidth = tab.offsetWidth;
     const tabLeft = tab.offsetLeft;
@@ -61,7 +55,6 @@ tabs.forEach(tab => {
     underline.style.width = `${tabWidth}px`;
   });
 });
-
 const tabWidth = tabs[0].offsetWidth;
 const tabLeft = tabs[0].offsetLeft;
 underline.style.transform = `translateX(${tabLeft}px)`;
