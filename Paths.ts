@@ -5,13 +5,17 @@ interface Path {
 }
 
 export const pathList = [
-    {
-        folder: "alumni",
-        view: "/test-user"
-    },
+    // {
+    //     folder: "alumni",
+    //     view: "/test-user"
+    // },
     {
         folder: "alumni",
         view: "/user-details"
+    },
+    {
+        folder: "alumni",
+        view: "/user-details-2"
     }
 ]
 

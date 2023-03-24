@@ -1,0 +1,50 @@
+@layout('alumni/layouts/base')
+
+@section('content')
+
+<main class="tabs flex min-w-0 flex-start flex-col overflow-hidden" x-data="{ activeTab: 1 }">
+    <div class="mt-6 sm:mt-2 2xl:mt-5">
+        <div class="border-b border-gray-200">
+            <div class="max-w-5xl px-6 sm:px-6 lg:px-6">
+                <nav class="-mb-px gap-1 flex" aria-label="Tabs">
+                    <template x-for="(tab, index) in tabs" :key="index">
+                        <div class="box-border tab cursor-pointer text-gray-900 whitespace-nowrap border-b-2 py-3 px-2 test-base font-medium"
+                            :class="{ 'active': activeTab === index + 1 }" @click="activeTab = index + 1">
+                            <div class="-ml-5 relative">
+                                <span class="px-3" x-text="tab"></span>
+                                <div class="absolute mt-3 w-full h-0.5 bg-sky-800"
+                                    x-show="activeTab === index + 1"
+                                    x-transition:enter="transition ease-in duration-300" x-transition:enter-start="opacity-0"
+                                    x-transition:enter-end="opacity-100"></div>
+                            </div>
+                        </div>
+                    </template>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div x-show="activeTab === 1">
+        @include('alumni/partials/main/profile-tab')
+    </div>
+
+    <div x-show="activeTab === 2" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
+        <h1>Professional</h1>
+        <p>Professional content goes here.</p>
+    </div>
+
+    <div x-show="activeTab === 3" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
+        <h1>Academic</h1>
+        <p>Academic content goes here.</p>
+    </div>
+
+    <div x-show="activeTab === 4" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
+        <h1>Certificates</h1>
+        <p>Certificates content goes here.</p>
+    </div>
+</main>
+
+<script>
+    const tabs = ['Perfil', 'Profissional', 'Acadêmico', 'Certificados'];
+</script>
+@endsection
