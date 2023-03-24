@@ -2,29 +2,68 @@
 
 @section('content')
 
-<main class="flex min-w-0 flex-start flex-col overflow-hidden">
-
-    <div class="mt-6 sm:mt-2 2xl:mt-5">
+<main class="tab-container flex min-w-0 flex-start flex-col overflow-hidden" x-data="{ activeTab: 'profile'}">
+    <div class="mt-6 sm:mt-2">
         <div class="border-b border-gray-200">
-            <div class="max-w-5xl px-6 sm:px-6 lg:px-6">
-                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
-                    <!-- Current: "border-pink-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-                    <a href="#"
-                        class="border-cyan-800 text-gray-900 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium"
-                        aria-current="page">Perfil</a>
-
-                    <a href="#"
-                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Profissional</a>
-
-                    <a href="#"
-                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Acadêmico</a>
-                    <a href="#"
-                        class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 test-base font-medium">Certificados</a>
-                </nav>
+            <div class="relative max-w-5xl">
+                <nav class="relative flex gap-4 ml-4 pr-6 font-medium" aria-label="Tabs">
+                    <div class="my-tab p-3 cursor-pointer" @click="activeTab = 'profile'">Perfil</div>
+                    <div class="my-tab p-3 cursor-pointer"  @click="activeTab = 'professional'">Profissional</div>
+                    <div class="my-tab p-3 cursor-pointer"  @click="activeTab = 'academic'">Acadêmico</div>
+                    <div class="underline-tab bg-cyan-800"></div>
+                </nav>        
             </div>
         </div>
     </div>
-    @include('alumni/partials/main/profile-tab')
-</main>
 
-@end
+    <div class="tab-content">
+        <div x-show="activeTab === 'profile'" x-cloak>
+            @include('alumni/partials/main/profile-tab')
+        </div>
+        <div x-show="activeTab === 'professional'" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6" x-cloak>
+            <h2>Show this when Professional tab is active</h2>
+        </div>
+        <div x-show="activeTab === 'academic'" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6" x-cloak>
+            <h2>Show this when Academic tab is active</h2>
+        </div>
+    </div>
+
+    <style>
+        .my-tab {
+            padding: 10px;
+            cursor: pointer;
+        }
+    
+        .active-tab {
+            color: blue;
+        }
+    
+        .underline-tab {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            transition: transform 0.3s;
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+
+    <script>
+        const tabs = document.querySelectorAll('.my-tab');
+    const underline = document.querySelector('.underline-tab');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Move the underline to the clicked tab
+        const tabWidth = tab.offsetWidth;
+        const tabLeft = tab.offsetLeft;
+        underline.style.transform = `translateX(${tabLeft}px)`;
+        underline.style.width = `${tabWidth}px`;
+      });
+    });
+    const tabWidth = tabs[0].offsetWidth;
+    const tabLeft = tabs[0].offsetLeft;
+    // underline.style.transform = `translateX(${tabLeft}px)`;
+    underline.style.width = `${tabWidth}px`;
+    </script>
+@endsection
