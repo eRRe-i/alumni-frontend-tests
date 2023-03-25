@@ -6,11 +6,11 @@
     <div class="mt-6 sm:mt-2 2xl:mt-5">
         <div class="border-b border-gray-200">
             <div class="max-w-5xl px-6 sm:px-6 lg:px-6">
-                <nav class="-mb-px gap-1 flex" aria-label="Tabs">
+                <nav class="-ml-5 -mb-px gap-1 flex" aria-label="Tabs">
                     <template x-for="(tab, index) in tabs" :key="index">
                         <div class="box-border tab cursor-pointer text-gray-900 whitespace-nowrap border-b-2 py-3 px-2 test-base font-medium"
                             :class="{ 'active': activeTab === index + 1 }" @click="activeTab = index + 1">
-                            <div class="-ml-5 relative">
+                            <div class="relative">
                                 <span class="px-3" x-text="tab"></span>
                                 <div class="absolute mt-3 w-full h-0.5 bg-sky-800"
                                     x-show="activeTab === index + 1"
@@ -25,7 +25,7 @@
     </div>
 
     <div x-show="activeTab === 1">
-        @include('alumni/partials/main/profile-tab')
+        @include('alumni/partials/details-tabs/profile-tab')
     </div>
 
     <div x-show="activeTab === 2" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">

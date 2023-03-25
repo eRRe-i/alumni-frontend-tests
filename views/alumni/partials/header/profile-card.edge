@@ -11,7 +11,7 @@
                         <div class="mt-4 flex flex-col justify-center text-center sm:mt-0 sm:pt-1 sm:text-left">
                             <p class="text-xl font-bold text-gray-900 sm:text-2xl">{{ user.name }}</p>
                             <p class="text-base font-medium text-gray-600">{{ user.job }}</p>
-                            <div class="pt-1 flex justify-center sm:justify-start">
+                            <div class="flex justify-center sm:justify-start items-center">
                                 <p class="underline"> {{ user.city }} / {{ user.estado }} </p>
                                 <ion-icon class="text-xl" name="location-outline"></ion-icon>
                             </div>
@@ -29,11 +29,13 @@
                     @end
                 </div>
             </div>
-            <div class="px-6 pt-2 pb-2 flex  flex-wrap gap-4 divide-y border-t border-gray-200  sm:divide-y-0 justify-center sm:justify-start items-center">
+            <div class="px-6 py-2 flex  flex-wrap gap-3 divide-y border-t border-gray-200  sm:divide-y-0 justify-center sm:justify-start items-center">
 
                 @each(item in userLinks.profileLinks)
                 <a href={{ item.link }} target="_blank">
-                    @include(`alumni/partials/icons/${item.name}`)
+                    <div class="w-[36px] h-[36px]">
+                        @include(`alumni/partials/icons/${item.name}`)
+                    </div>
                 </a>
                 @end
 
