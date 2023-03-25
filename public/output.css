@@ -735,11 +735,6 @@ select {
   margin-right: 1.25rem;
 }
 
-.mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -803,14 +798,6 @@ select {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.-ml-2 {
-  margin-left: -0.5rem;
-}
-
-.-ml-4 {
-  margin-left: -1rem;
 }
 
 .-ml-5 {
@@ -893,6 +880,18 @@ select {
   height: 100vh;
 }
 
+.h-\[36px\] {
+  height: 36px;
+}
+
+.h-\[38px\] {
+  height: 38px;
+}
+
+.h-\[40px\] {
+  height: 40px;
+}
+
 .min-h-\[50\%\] {
   min-height: 50%;
 }
@@ -951,6 +950,18 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[36px\] {
+  width: 36px;
+}
+
+.w-\[38px\] {
+  width: 38px;
+}
+
+.w-\[40px\] {
+  width: 40px;
 }
 
 .min-w-0 {
@@ -1067,6 +1078,10 @@ select {
   justify-content: space-between;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1077,10 +1092,6 @@ select {
 
 .gap-4 {
   gap: 1rem;
-}
-
-.gap-1 {
-  gap: 0.25rem;
 }
 
 .gap-x-3 {
@@ -1221,6 +1232,11 @@ select {
   background-color: rgb(14 116 144 / var(--tw-bg-opacity));
 }
 
+.bg-cyan-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 94 117 / var(--tw-bg-opacity));
+}
+
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1261,11 +1277,6 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-cyan-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(21 94 117 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -1296,20 +1307,16 @@ select {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.to-cyan-600 {
+  --tw-gradient-to: #0891b2;
+}
+
 .to-fuchsia-400 {
   --tw-gradient-to: #e879f9;
 }
 
 .to-pink-300 {
   --tw-gradient-to: #f9a8d4;
-}
-
-.to-sky-600 {
-  --tw-gradient-to: #0284c7;
-}
-
-.to-cyan-600 {
-  --tw-gradient-to: #0891b2;
 }
 
 .bg-contain {
@@ -1331,11 +1338,6 @@ select {
 
 .p-3 {
   padding: 0.75rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .px-2 {
@@ -1388,21 +1390,12 @@ select {
   padding-bottom: 0.75rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
 
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
 }
 
 .pr-6 {
@@ -1821,6 +1814,10 @@ select {
     justify-content: flex-start;
   }
 
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
   .sm\:justify-between {
     justify-content: space-between;
   }
@@ -1945,10 +1942,6 @@ select {
 
   .lg\:w-64 {
     width: 16rem;
-  }
-
-  .lg\:max-w-6xl {
-    max-width: 72rem;
   }
 
   .lg\:flex-col {
