@@ -11,7 +11,7 @@ export const pathList = [
     // },
     {
         folder: "alumni",
-        view: "/user-details"
+        view: "/user-base-navbar"
     },
     {
         folder: "alumni",
