@@ -395,29 +395,22 @@
               
 
 
-<main class="tabs flex min-w-0 flex-start flex-col overflow-hidden" x-data="{ activeTab: 1 }">
-    <div class="mt-6 sm:mt-2 2xl:mt-5">
+<main class="tab-container flex min-w-0 flex-start flex-col overflow-hidden" x-data="{ activeTab: 'profile'}">
+    <div class="mt-6 sm:mt-2">
         <div class="border-b border-gray-200">
-            <div class="max-w-5xl px-6 sm:px-6 lg:px-6">
-                <nav class="-ml-5 -mb-px gap-1 flex" aria-label="Tabs">
-                    <template x-for="(tab, index) in tabs" :key="index">
-                        <div class="box-border tab cursor-pointer text-gray-900 whitespace-nowrap border-b-2 py-3 px-2 test-base font-medium"
-                            :class="{ 'active': activeTab === index + 1 }" @click="activeTab = index + 1">
-                            <div class="relative">
-                                <span class="px-3" x-text="tab"></span>
-                                <div class="absolute mt-3 w-full h-0.5 bg-sky-800"
-                                    x-show="activeTab === index + 1"
-                                    x-transition:enter="transition ease-in duration-300" x-transition:enter-start="opacity-0"
-                                    x-transition:enter-end="opacity-100"></div>
-                            </div>
-                        </div>
-                    </template>
-                </nav>
+            <div class="relative max-w-5xl">
+                <nav class="relative flex gap-4 ml-3 pr-6 font-medium" aria-label="Tabs">
+                    <div class="my-tab p-3 cursor-pointer" @click="activeTab = 'profile'">Perfil</div>
+                    <div class="my-tab p-3 cursor-pointer"  @click="activeTab = 'professional'">Profissional</div>
+                    <div class="my-tab p-3 cursor-pointer"  @click="activeTab = 'academic'">Acadêmico</div>
+                    <div class="underline-tab bg-cyan-800"></div>
+                </nav>        
             </div>
         </div>
     </div>
 
-    <div x-show="activeTab === 1"><div class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
+    <div class="tab-content">
+        <div x-show="activeTab === 'profile'" x-cloak><div class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
   <dl class="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
 
     <div class="sm:col-span-1">
@@ -447,27 +440,44 @@
     </div>
   </dl>
 </div>
+        </div>
+        <div x-show="activeTab === 'professional'" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6" x-cloak>
+            <h2>Show this when Professional tab is active</h2>
+        </div>
+        <div x-show="activeTab === 'academic'" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6" x-cloak>
+            <h2>Show this when Academic tab is active</h2>
+        </div>
     </div>
 
-    <div x-show="activeTab === 2" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
-        <h1>Professional</h1>
-        <p>Professional content goes here.</p>
-    </div>
+    <style>
+        .underline-tab {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            transition: transform 0.3s;
+        }
+        [x-cloak] { display: none !important; }
+    </style>
 
-    <div x-show="activeTab === 3" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
-        <h1>Academic</h1>
-        <p>Academic content goes here.</p>
-    </div>
-
-    <div x-show="activeTab === 4" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6">
-        <h1>Certificates</h1>
-        <p>Certificates content goes here.</p>
-    </div>
-</main>
-
-<script>
-    const tabs = ['Perfil', 'Profissional', 'Acadêmico', 'Certificados'];
-</script>
+    <script>
+        const tabs = document.querySelectorAll('.my-tab');
+    const underline = document.querySelector('.underline-tab');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Move the underline to the clicked tab
+        const tabWidth = tab.offsetWidth;
+        const tabLeft = tab.offsetLeft;
+        underline.style.transform = `translateX(${tabLeft}px)`;
+        underline.style.width = `${tabWidth}px`;
+      });
+    });
+    const tabWidth = tabs[0].offsetWidth;
+    const tabLeft = tabs[0].offsetLeft;
+    // underline.style.transform = `translateX(${tabLeft}px)`;
+    underline.style.width = `${tabWidth}px`;
+    </script>
             </div>
         </div>
 
