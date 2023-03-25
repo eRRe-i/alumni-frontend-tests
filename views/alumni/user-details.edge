@@ -6,7 +6,7 @@
     <div class="mt-6 sm:mt-2">
         <div class="border-b border-gray-200">
             <div class="relative max-w-5xl">
-                <nav class="relative flex gap-4 ml-4 pr-6 font-medium" aria-label="Tabs">
+                <nav class="relative flex gap-4 ml-3 pr-6 font-medium" aria-label="Tabs">
                     <div class="my-tab p-3 cursor-pointer" @click="activeTab = 'profile'">Perfil</div>
                     <div class="my-tab p-3 cursor-pointer"  @click="activeTab = 'professional'">Profissional</div>
                     <div class="my-tab p-3 cursor-pointer"  @click="activeTab = 'academic'">Acadêmico</div>
@@ -18,7 +18,7 @@
 
     <div class="tab-content">
         <div x-show="activeTab === 'profile'" x-cloak>
-            @include('alumni/partials/main/profile-tab')
+            @include('alumni/partials/details-tabs/profile-tab')
         </div>
         <div x-show="activeTab === 'professional'" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6" x-cloak>
             <h2>Show this when Professional tab is active</h2>
@@ -29,15 +29,6 @@
     </div>
 
     <style>
-        .my-tab {
-            padding: 10px;
-            cursor: pointer;
-        }
-    
-        .active-tab {
-            color: blue;
-        }
-    
         .underline-tab {
             position: absolute;
             bottom: 0;
