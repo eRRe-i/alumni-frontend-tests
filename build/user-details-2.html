@@ -32,7 +32,7 @@
         <div x-data="{open: $store.sidebar.open}">
 <div class="SIDEBAR">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-    <div class="SIDEBAR--mobile relative z-40 lg:hidden" role="dialog" aria-modal="true">
+    <div class="SIDEBAR--mobile relative z-40 md:hidden" role="dialog" aria-modal="true">
         <!--
         Off-canvas menu backdrop, show/hide based on off-canvas menu state.
   
@@ -197,9 +197,9 @@
     </div> <!-- SIDEBAR--mobile -->
 
             <div class="relative flex flex-col">
-<nav class="hidden lg:block lg:h-16">
+<nav class="hidden md:flex md:h-16">
     <div class="h-44 pt-3 w-full bg-gradient-to-r from-cyan-800 to-cyan-600">
-        <div class="mx-auto lg:px-6">
+        <div class="max-w-[1024px] mx-auto md:px-6">
             <div class="relative flex h-16 items-center justify-between">
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex flex-shrink-0 items-center">
@@ -275,7 +275,7 @@
     </div>
 </nav>
 
-<div class="TOPBAR--mobile flex lg:hidden h-16 flex-shrink-0 border-b border-gray-200 bg-white lg:border-none">
+<div class="TOPBAR--mobile flex md:hidden h-16 flex-shrink-0 border-b border-gray-200 bg-white lg:border-none">
     <div class="h-44 pt-3 w-full bg-gradient-to-r from-cyan-800 to-cyan-600">
 
 
@@ -347,7 +347,7 @@
         </div>
     </div>
 </div>
-<div class="PROFILE px-5 pb-4 pt-8">
+<div class="PROFILE px-5 pb-4 pt-8 lg:w-[1024px] lg:mx-auto">
     <div class="overflow-hidden rounded-lg bg-white shadow">
         <h2 class="sr-only" id="profile-overview-title">Profile Overview</h2>
         <div class="bg-white pt-3">
