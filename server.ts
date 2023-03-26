@@ -28,16 +28,8 @@ app.get('/test-user', async (req: Request, res: Response) => {
     })
     res.send(data)
 })
-app.get('/user-base-navbar', async (req: Request, res: Response) => {
-    const data = await edge.render('alumni//user-base-navbar', {
-        loggedUser: users[1],
-        user: users[0],
-        userLinks: userLinks
-    })
-    res.send(data)
-})
-app.get('/user-details-2', async (req: Request, res: Response) => {
-    const data = await edge.render('alumni/user-details-2', {
+app.get('/user-details', async (req: Request, res: Response) => {
+    const data = await edge.render('alumni/user-details', {
         loggedUser: users[1],
         user: users[0],
         userLinks: userLinks
