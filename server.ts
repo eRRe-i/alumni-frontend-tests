@@ -36,8 +36,8 @@ app.get('/user-details', async (req: Request, res: Response) => {
     })
     res.send(data)
 })
-app.get('/test', async (req: Request, res: Response) => {
-    const data = await edge.render('alumni/bar', {
+app.get('/admin-user-details', async (req: Request, res: Response) => {
+    const data = await edge.render('alumni/admin-user-details', {
         loggedUser: users[1],
         user: users[0],
         userLinks: userLinks
