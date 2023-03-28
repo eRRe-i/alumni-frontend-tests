@@ -1,4 +1,7 @@
-<div class="mt-6 max-w-5xl px-6 w-full overflow-y-auto overflow-x-hidden">
+<div class="relative mt-6 max-w-5xl px-6 w-full overflow-y-auto overflow-x-hidden"  x-data="{ modalOpen:false, toggleModal() { this.modalOpen = !this.modalOpen } }">
+
+  {{--  <button type="button" class="absolute z-20 top-0 right-0 rounded-md bg-indigo-600 px-3 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" x-on:click="toggleModal" >Editar perfil</button>  --}}
+
   <dl class="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
 
     <div class="sm:col-span-1">
@@ -29,4 +32,34 @@
       </dd>
     </div>
   </dl>
+
+  <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <!--
+      Background backdrop, show/hide based on modal state.
+  
+      Entering: "ease-out duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "ease-in duration-200"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+    x-show="$store.modal.open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
+  
+    <div class="fixed inset-0 z-10 overflow-y-auto" x-show="$store.modal.open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+
+        <div @click.away="$store.modal.toggle()" class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-28 sm:w-full sm:max-w-3xl sm:p-6">
+            @include('alumni/partials/forms/edit-profile-form')
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
