@@ -11,6 +11,18 @@
 
     <script src="//unpkg.com/alpinejs" defer></script>
 
+    <script>
+        document.addEventListener('alpine:init', () => {
+        Alpine.store('modal', {
+            open: false,
+ 
+            toggle() {
+                this.open = ! this.open
+            }
+        })
+    })
+    </script>
+    
 </head>
 
 <body class="w-full">
