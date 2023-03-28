@@ -12,7 +12,7 @@ const pathsToBuild = [...paths, ...netlifyBasePathList]
 pathsToBuild.map(item => {
     edge.render(join(item.folder, item.view), {
         pathList: pathList,
-        loggedUser: users[1],
+        loggedUser: users[0],
         user: users[0],
         userLinks: userLinks
     }).then((data) => {
