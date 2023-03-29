@@ -24,6 +24,48 @@ export const loggedUser: User = {
     avatarUrl: './public/leandro.jpg',
 }
 
+export const workExperience: any[] = [
+    {
+        company: 'Caelum',
+        userId: 0,
+        current: true,
+        jobList: [ 
+            {
+                id: 0,
+                job: 'Software Developer',
+                jobDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Donec auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
+                city: 'Rio de Janeiro',
+                type: 'Full Time',
+                currentJob: true,
+                startDate: '2019-01-01',
+                endDate: '',
+            },
+            {
+                id: 1,
+                job: 'Software Developer',
+                jobDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Donec auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
+                city: 'Rio de Janeiro',
+                type: 'Full Time',
+                currentJob: false,
+                startDate: '2019-01-01',
+                endDate: '2020-01-01',
+            },
+            {
+                id: 2,
+                job: 'Software Developer',
+                jobDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Donec auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
+                city: 'Rio de Janeiro',
+                type: 'Full Time',
+                currentJob: false,
+                startDate: '2019-01-01',
+                endDate: '2020-01-01',
+        
+            },
+        ]
+    }
+]
+    
+
 export const users: User[] = [
     {
         id: 0,

@@ -1,0 +1,5 @@
+<div class="relative flex flex-col gap-3 mt-6 max-w-5xl w-full overflow-y-auto overflow-x-hidden">
+  @each(item in workExperience)
+    @!component('alumni/components/work-experience', { work: ({...item}) })
+  @end
+</div>

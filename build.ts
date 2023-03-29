@@ -1,6 +1,6 @@
 import edge from 'edge.js'
 import { join } from 'path'
-import { loggedUser, users, userLinks } from './Users'
+import { loggedUser, users, userLinks, workExperience } from './Users'
 import { pathList, netlifyBasePathList } from './Paths'
 import fs from 'fs'
 
@@ -14,7 +14,8 @@ pathsToBuild.map(item => {
         pathList: pathList,
         loggedUser: users[0],
         user: users[0],
-        userLinks: userLinks
+        userLinks: userLinks,
+        workExperience: workExperience,
     }).then((data) => {
         const file = new Blob([data], { type: 'text/plain' })
         fs.writeFile(join(__dirname, "build", item.path), data, err => {

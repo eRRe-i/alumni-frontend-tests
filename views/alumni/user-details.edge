@@ -20,8 +20,8 @@
         <div x-show="activeTab === 'profile'" x-cloak>
             @include('alumni/partials/details-tabs/profile-tab')
         </div>
-        <div x-show="activeTab === 'professional'" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6" x-cloak>
-            <h2>Show this when Professional tab is active</h2>
+        <div x-show="activeTab === 'professional'" x-cloak>
+            @include('alumni/partials/details-tabs/work-exp-tab')
         </div>
         <div x-show="activeTab === 'academic'" class="mt-6 max-w-5xl px-6 sm:px-6 lg:px-6" x-cloak>
             <h2>Show this when Academic tab is active</h2>
