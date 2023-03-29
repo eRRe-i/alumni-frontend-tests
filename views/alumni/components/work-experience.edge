@@ -1,76 +1,75 @@
-<div class="space-y-2">
-  <h1 class="px-4 font-bold text-2xl text-gray-500"> {{work.company}} </h1>
-  @each(item in work.jobList)
-  <div class="mx-4 rounded-md border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
-    <h4 class="text-base font-semibold leading-6 text-gray-500"> {{ item.job }} </h4>
-    <p> {{ item.jobDescription }} </p>
-    <div class="flow-root">
-      <ul role="list">
-        <li>
-          <div class="relative">
-            <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
-            <div class="relative mt-3 flex space-x-3">
-            @if(item.currentJob === true)
-            <div>
-              <span class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center">
-                <svg class="h-5 w-5 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 99.83" style="enable-background:new 0 0 122.88 99.83" xml:space="preserve"><path d="M8.79 17.04h10.27v82.79H8.79C3.95 99.83 0 95.88 0 91.04V25.82c0-4.83 3.95-8.78 8.79-8.78zM52.34 0h17.49c5.44 0 9.89 4.45 9.89 9.89v5.28h-6.3v-5.3c0-1.91-1.56-3.47-3.47-3.47H52.22c-1.91 0-3.47 1.56-3.47 3.47v5.3h-6.3V9.89C42.45 4.45 46.9 0 52.34 0zM24.28 17.04h73.15v82.79H24.28V17.04zm78.37 0h11.44c4.83 0 8.79 3.95 8.79 8.79v65.22c0 4.83-3.95 8.79-8.79 8.79h-11.44v-82.8z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
-              </span>
-            </div>
-            <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-              <div>
-                <p class="text-sm text-gray-500">Currently as <a href="#" class="font-medium text-gray-900">Front End
-                    Developer</a></p>
-              </div>
-              <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                <time datetime="2020-09-20"> {{ item.endDate }} </time>
-              </div>
-            </div>
-          </div>
-            @else
-            <div>
-              <span class="h-8 w-8 rounded-full bg-red-500 flex items-center justify-center">
-                <svg class="h-5 w-5 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 99.83" style="enable-background:new 0 0 122.88 99.83" xml:space="preserve"><path d="M8.79 17.04h10.27v82.79H8.79C3.95 99.83 0 95.88 0 91.04V25.82c0-4.83 3.95-8.78 8.79-8.78zM52.34 0h17.49c5.44 0 9.89 4.45 9.89 9.89v5.28h-6.3v-5.3c0-1.91-1.56-3.47-3.47-3.47H52.22c-1.91 0-3.47 1.56-3.47 3.47v5.3h-6.3V9.89C42.45 4.45 46.9 0 52.34 0zM24.28 17.04h73.15v82.79H24.28V17.04zm78.37 0h11.44c4.83 0 8.79 3.95 8.79 8.79v65.22c0 4.83-3.95 8.79-8.79 8.79h-11.44v-82.8z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
-              </span>
-            </div>
-            <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-              <div>
-                <p class="text-sm text-gray-500">Applied to <a href="#" class="font-medium text-gray-900">Front End
-                    Developer</a></p>
-              </div>
-              <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                <time datetime="2020-09-20"> {{ item.endDate }} </time>
-              </div>
-            </div>
-          </div>
-            @end
-          </div>
-        </li>
-
-        <li>
-          <div class="relative">
-            <div class="relative flex space-x-3">
-              <div>
-                <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-2 ring-white">
-                  <svg class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path
-                      d="M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z" />
-                  </svg>
-                </span>
-              </div>
-              <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-                <div>
-                  <p class="text-sm text-gray-500">Advanced to phone screening by <a href="#"
-                      class="font-medium text-gray-900">Bethany Blake</a></p>
-                </div>
-                <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                  <time datetime="2020-09-20">{{ item.startDate }}</time>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+<div class="space-y-0.5" x-data="{open: {{ work.current ? true : false }}, toggle() {this.open = !this.open}}">
+  <div @click="toggle()">
+    <h1 class="px-6 py-3 rounded font-bold text-2xl text-gray-500 border-gray-200 bg-white cursor-pointer"> {{work.company}} </h1>
   </div>
-  @endeach
+  <div x-show=open class="relative -z-10 inset-0 x-cloak">
+    @each(item in work.jobList)
+    <div class="px-6 rounded-md border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
+      <h4 class="text-base font-semibold leading-6 text-gray-500"> {{ item.job }} </h4>
+      <p> {{ item.jobDescription }} </p>
+      <div class="flow-root">
+        <ul role="list">
+          <li>
+            <div class="relative">
+              <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+              <div class="relative mt-3 flex space-x-3">
+                @if(item.currentJob === true)
+                <div>
+                  <span class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-2 ring-white">
+                    <svg class="h-5 w-5 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 99.83"
+                      style="enable-background:new 0 0 122.88 99.83" xml:space="preserve">
+                      <path
+                        d="M8.79 17.04h10.27v82.79H8.79C3.95 99.83 0 95.88 0 91.04V25.82c0-4.83 3.95-8.78 8.79-8.78zM52.34 0h17.49c5.44 0 9.89 4.45 9.89 9.89v5.28h-6.3v-5.3c0-1.91-1.56-3.47-3.47-3.47H52.22c-1.91 0-3.47 1.56-3.47 3.47v5.3h-6.3V9.89C42.45 4.45 46.9 0 52.34 0zM24.28 17.04h73.15v82.79H24.28V17.04zm78.37 0h11.44c4.83 0 8.79 3.95 8.79 8.79v65.22c0 4.83-3.95 8.79-8.79 8.79h-11.44v-82.8z"
+                        style="fill-rule:evenodd;clip-rule:evenodd" /></svg>
+                  </span>
+                </div>
+                <div class="flex min-w-0 flex-1 space-x-4 pt-1.5">
+                  <div>
+                    <p class="text-sm text-gray-500">Currently as <a href="#" class="font-medium text-gray-900"> {{ item.job }} </a></p>
+                  </div>
+                </div>
+                @else
+                <div>
+                  <span class="h-8 w-8 rounded-full bg-red-500 flex items-center justify-center ring-2 ring-white">
+                    <svg class="h-5 w-5 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 99.83"
+                      style="enable-background:new 0 0 122.88 99.83" xml:space="preserve">
+                      <path
+                        d="M8.79 17.04h10.27v82.79H8.79C3.95 99.83 0 95.88 0 91.04V25.82c0-4.83 3.95-8.78 8.79-8.78zM52.34 0h17.49c5.44 0 9.89 4.45 9.89 9.89v5.28h-6.3v-5.3c0-1.91-1.56-3.47-3.47-3.47H52.22c-1.91 0-3.47 1.56-3.47 3.47v5.3h-6.3V9.89C42.45 4.45 46.9 0 52.34 0zM24.28 17.04h73.15v82.79H24.28V17.04zm78.37 0h11.44c4.83 0 8.79 3.95 8.79 8.79v65.22c0 4.83-3.95 8.79-8.79 8.79h-11.44v-82.8z"
+                        style="fill-rule:evenodd;clip-rule:evenodd" /></svg>
+                  </span>
+                </div>
+                <div class="flex min-w-0 flex-1 space-x-4 pt-1.5">
+                  <div>
+                    <p class="text-sm text-gray-500">Applied to <a href="#" class="font-medium text-gray-900"> {{ item.job }} </a> <time datetime="2020-09-20"> at {{ item.endDate }} </time></p>
+                  </div>
+                </div>
+                @end
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="relative">
+              <div class="relative flex space-x-3">
+                <div>
+                  <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-2 ring-white">
+                    <svg class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex min-w-0 flex-1 space-x-4 pt-1.5">
+                  <div>
+                    <p class="text-sm text-gray-500">Admitted <time datetime="2020-09-20"> at {{ item.startDate }}</time> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    @endeach
+  </div>
 </div>
