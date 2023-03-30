@@ -9,8 +9,9 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
-
+   
     <script>
         document.addEventListener('alpine:init', () => {
         Alpine.store('modal', {
@@ -695,11 +696,11 @@
 </div>
         </div>
         <div x-show="activeTab === 'professional'" x-cloak><div class="relative flex flex-col gap-3 mt-6 max-w-5xl w-full overflow-y-auto overflow-x-hidden">
-<div class="border-slate-500" x-data="{open: false, toggle() {this.open = !this.open}}">
+<div class="border-slate-500" x-data="{open: true, toggle() {this.open = !this.open}}">
   <div @click="toggle()">
     <h1 class="px-6 py-4 font-bold text-xl text-white border-gray-200 bg-sky-600 cursor-pointer" :class=" open ? 'rounded-t-md' : 'rounded-md'"> Caelum </h1>
   </div>
-  <div x-ref="this" class="relative x-cloak overflow-hidden transition-all duration-500 max-h-0" x-bind:style="open ? 'max-height: ' + $refs.this.scrollHeight + 'px' : ''"">
+  <div x-show='open' x-collapse x-cloak>
 
     <div class="px-6 border-b border-slate-300 bg-white px-4 py-5 sm:px-6">
       <h4 class="text-base font-semibold leading-6 text-gray-500"> Software Developer </h4>
@@ -857,7 +858,7 @@
   <div @click="toggle()">
     <h1 class="px-6 py-4 font-bold text-xl text-white border-gray-200 bg-sky-600 cursor-pointer" :class=" open ? 'rounded-t-md' : 'rounded-md'"> Lorem Ipsum </h1>
   </div>
-  <div x-ref="this" class="relative x-cloak overflow-hidden transition-all duration-500 max-h-0" x-bind:style="open ? 'max-height: ' + $refs.this.scrollHeight + 'px' : ''"">
+  <div x-show='open' x-collapse x-cloak>
 
     <div class="px-6 border-b border-slate-300 bg-white px-4 py-5 sm:px-6">
       <h4 class="text-base font-semibold leading-6 text-gray-500"> Software Developer </h4>

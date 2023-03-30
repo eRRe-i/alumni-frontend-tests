@@ -1,8 +1,8 @@
-<div class="border-slate-500" x-data="{open: false, toggle() {this.open = !this.open}}">
+<div class="border-slate-500" x-data="{open: {{ work.current }}, toggle() {this.open = !this.open}}">
   <div @click="toggle()">
     <h1 class="px-6 py-4 font-bold text-xl text-white border-gray-200 bg-sky-600 cursor-pointer" :class=" open ? 'rounded-t-md' : 'rounded-md'"> {{work.company}} </h1>
   </div>
-  <div x-ref="this" class="relative x-cloak overflow-hidden transition-all duration-500 max-h-0" x-bind:style="open ? 'max-height: ' + $refs.this.scrollHeight + 'px' : ''"">
+  <div x-show='open' x-collapse.duration.500ms x-cloak>
 
     @each(item in work.jobList)
     <div class="px-6 border-b border-slate-300 bg-white px-4 py-5 sm:px-6">
