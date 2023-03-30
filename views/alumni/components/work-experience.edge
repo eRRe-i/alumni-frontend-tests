@@ -1,6 +1,6 @@
 <div class="border-slate-500" x-data="{open: false, toggle() {this.open = !this.open}}">
   <div @click="toggle()">
-    <h1 class="px-6 py-4 font-bold text-2xl text-gray-500 border-gray-200 bg-cyan-600 cursor-pointer bg-opacity-10" :class=" open ? 'rounded-t-md' : 'rounded-md'"> {{work.company}} </h1>
+    <h1 class="px-6 py-4 font-bold text-xl text-white border-gray-200 bg-sky-600 cursor-pointer" :class=" open ? 'rounded-t-md' : 'rounded-md'"> {{work.company}} </h1>
   </div>
   <div x-ref="this" class="relative x-cloak overflow-hidden transition-all duration-500 max-h-0" x-bind:style="open ? 'max-height: ' + $refs.this.scrollHeight + 'px' : ''"">
 
