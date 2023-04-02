@@ -1,27 +1,63 @@
 <div class="border-slate-500" x-data="{open: {{ work.current }}, toggle() {this.open = !this.open}}">
-  <div class="px-6 py-4  bg-sky-600  flex justify-between  border-gray-200 cursor-pointer"  :class=" open ? 'rounded-t-md' : 'rounded-md'" @click="toggle()">
-    <h3 class=" font-bold text-2xl text-white"> {{work.company}} </h3>
+  <div class="px-6 py-4  bg-sky-600  flex justify-between  border-gray-200 cursor-pointer"
+    :class=" open ? 'rounded-t-md' : 'rounded-md'">
+    <h3 @click="toggle()" class="grow font-bold text-2xl text-white"> {{work.company}} </h3>
+    @if(user.id === loggedUser.id)
     <div class="flex justify-around gap-3">
-      <svg class="h-10 w-10 fill-white rounded-md" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path clip-rule="evenodd" d="M21.1213 2.70705C19.9497 1.53548 18.0503 1.53547 16.8787 2.70705L15.1989 4.38685L7.29289 12.2928C7.16473 12.421 7.07382 12.5816 7.02986 12.7574L6.02986 16.7574C5.94466 17.0982 6.04451 17.4587 6.29289 17.707C6.54127 17.9554 6.90176 18.0553 7.24254 17.9701L11.2425 16.9701C11.4184 16.9261 11.5789 16.8352 11.7071 16.707L19.5556 8.85857L21.2929 7.12126C22.4645 5.94969 22.4645 4.05019 21.2929 2.87862L21.1213 2.70705ZM18.2929 4.12126C18.6834 3.73074 19.3166 3.73074 19.7071 4.12126L19.8787 4.29283C20.2692 4.68336 20.2692 5.31653 19.8787 5.70705L18.8622 6.72357L17.3068 5.10738L18.2929 4.12126ZM15.8923 6.52185L17.4477 8.13804L10.4888 15.097L8.37437 15.6256L8.90296 13.5112L15.8923 6.52185ZM4 7.99994C4 7.44766 4.44772 6.99994 5 6.99994H10C10.5523 6.99994 11 6.55223 11 5.99994C11 5.44766 10.5523 4.99994 10 4.99994H5C3.34315 4.99994 2 6.34309 2 7.99994V18.9999C2 20.6568 3.34315 21.9999 5 21.9999H16C17.6569 21.9999 19 20.6568 19 18.9999V13.9999C19 13.4477 18.5523 12.9999 18 12.9999C17.4477 12.9999 17 13.4477 17 13.9999V18.9999C17 19.5522 16.5523 19.9999 16 19.9999H5C4.44772 19.9999 4 19.5522 4 18.9999V7.99994Z"/>
+      <div x-data="{ openEditJob: false, toggleOpenEditJob() { this.openEditJob = !this.openEditJob } }">
+        <svg @click="toggleOpenEditJob()" class="h-10 w-10 fill-white rounded-md" width="800px" height="800px"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd"
+            d="M21.1213 2.70705C19.9497 1.53548 18.0503 1.53547 16.8787 2.70705L15.1989 4.38685L7.29289 12.2928C7.16473 12.421 7.07382 12.5816 7.02986 12.7574L6.02986 16.7574C5.94466 17.0982 6.04451 17.4587 6.29289 17.707C6.54127 17.9554 6.90176 18.0553 7.24254 17.9701L11.2425 16.9701C11.4184 16.9261 11.5789 16.8352 11.7071 16.707L19.5556 8.85857L21.2929 7.12126C22.4645 5.94969 22.4645 4.05019 21.2929 2.87862L21.1213 2.70705ZM18.2929 4.12126C18.6834 3.73074 19.3166 3.73074 19.7071 4.12126L19.8787 4.29283C20.2692 4.68336 20.2692 5.31653 19.8787 5.70705L18.8622 6.72357L17.3068 5.10738L18.2929 4.12126ZM15.8923 6.52185L17.4477 8.13804L10.4888 15.097L8.37437 15.6256L8.90296 13.5112L15.8923 6.52185ZM4 7.99994C4 7.44766 4.44772 6.99994 5 6.99994H10C10.5523 6.99994 11 6.55223 11 5.99994C11 5.44766 10.5523 4.99994 10 4.99994H5C3.34315 4.99994 2 6.34309 2 7.99994V18.9999C2 20.6568 3.34315 21.9999 5 21.9999H16C17.6569 21.9999 19 20.6568 19 18.9999V13.9999C19 13.4477 18.5523 12.9999 18 12.9999C17.4477 12.9999 17 13.4477 17 13.9999V18.9999C17 19.5522 16.5523 19.9999 16 19.9999H5C4.44772 19.9999 4 19.5522 4 18.9999V7.99994Z" />
         </svg>
-      <svg class="h-10 w-10 fill-white rounded-full" width="800px" height="800px" viewBox="0 0 200 200" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><title/><path d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165Zm30-72.5H110v-20a10,10,0,0,0-20,0v20H70a10,10,0,0,0,0,20H90v20a10,10,0,0,0,20,0v-20h20a10,10,0,0,0,0-20Z"/></svg>
+        <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" x-show="openEditJob"
+            x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
+
+          <div class="fixed inset-0 z-10 overflow-y-auto" x-show="openEditJob"
+            x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+            <div class="flex items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+
+              <div @click.away="toggleOpenEditJob()"
+                class="transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-28 sm:max-w-3xl sm:p-6">
+                @!component('alumni/components/forms/edit-work-experiende-form')
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="h-10 w-10 fill-white rounded-full" width="800px" height="800px" viewBox="0 0 200 200"
+        data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg">
+        <title />
+        <path
+          d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165Zm30-72.5H110v-20a10,10,0,0,0-20,0v20H70a10,10,0,0,0,0,20H90v20a10,10,0,0,0,20,0v-20h20a10,10,0,0,0,0-20Z" />
+        </svg>
     </div>
+    @end
   </div>
   <div x-show='open' x-collapse.duration.500ms x-cloak>
     @each(item in work.jobList)
     <div class=" relative px-6 border-b border-slate-300 bg-white py-5 sm:px-6 flex flex-col gap-2">
       <div class="absolute bottom-5 right-5">
-        <svg class="h-10 w-10 fill-gray-800 rounded-md" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path clip-rule="evenodd" d="M21.1213 2.70705C19.9497 1.53548 18.0503 1.53547 16.8787 2.70705L15.1989 4.38685L7.29289 12.2928C7.16473 12.421 7.07382 12.5816 7.02986 12.7574L6.02986 16.7574C5.94466 17.0982 6.04451 17.4587 6.29289 17.707C6.54127 17.9554 6.90176 18.0553 7.24254 17.9701L11.2425 16.9701C11.4184 16.9261 11.5789 16.8352 11.7071 16.707L19.5556 8.85857L21.2929 7.12126C22.4645 5.94969 22.4645 4.05019 21.2929 2.87862L21.1213 2.70705ZM18.2929 4.12126C18.6834 3.73074 19.3166 3.73074 19.7071 4.12126L19.8787 4.29283C20.2692 4.68336 20.2692 5.31653 19.8787 5.70705L18.8622 6.72357L17.3068 5.10738L18.2929 4.12126ZM15.8923 6.52185L17.4477 8.13804L10.4888 15.097L8.37437 15.6256L8.90296 13.5112L15.8923 6.52185ZM4 7.99994C4 7.44766 4.44772 6.99994 5 6.99994H10C10.5523 6.99994 11 6.55223 11 5.99994C11 5.44766 10.5523 4.99994 10 4.99994H5C3.34315 4.99994 2 6.34309 2 7.99994V18.9999C2 20.6568 3.34315 21.9999 5 21.9999H16C17.6569 21.9999 19 20.6568 19 18.9999V13.9999C19 13.4477 18.5523 12.9999 18 12.9999C17.4477 12.9999 17 13.4477 17 13.9999V18.9999C17 19.5522 16.5523 19.9999 16 19.9999H5C4.44772 19.9999 4 19.5522 4 18.9999V7.99994Z"/>
-          </svg>
+        <svg class="h-10 w-10 fill-gray-800 rounded-md" width="800px" height="800px" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd"
+            d="M21.1213 2.70705C19.9497 1.53548 18.0503 1.53547 16.8787 2.70705L15.1989 4.38685L7.29289 12.2928C7.16473 12.421 7.07382 12.5816 7.02986 12.7574L6.02986 16.7574C5.94466 17.0982 6.04451 17.4587 6.29289 17.707C6.54127 17.9554 6.90176 18.0553 7.24254 17.9701L11.2425 16.9701C11.4184 16.9261 11.5789 16.8352 11.7071 16.707L19.5556 8.85857L21.2929 7.12126C22.4645 5.94969 22.4645 4.05019 21.2929 2.87862L21.1213 2.70705ZM18.2929 4.12126C18.6834 3.73074 19.3166 3.73074 19.7071 4.12126L19.8787 4.29283C20.2692 4.68336 20.2692 5.31653 19.8787 5.70705L18.8622 6.72357L17.3068 5.10738L18.2929 4.12126ZM15.8923 6.52185L17.4477 8.13804L10.4888 15.097L8.37437 15.6256L8.90296 13.5112L15.8923 6.52185ZM4 7.99994C4 7.44766 4.44772 6.99994 5 6.99994H10C10.5523 6.99994 11 6.55223 11 5.99994C11 5.44766 10.5523 4.99994 10 4.99994H5C3.34315 4.99994 2 6.34309 2 7.99994V18.9999C2 20.6568 3.34315 21.9999 5 21.9999H16C17.6569 21.9999 19 20.6568 19 18.9999V13.9999C19 13.4477 18.5523 12.9999 18 12.9999C17.4477 12.9999 17 13.4477 17 13.9999V18.9999C17 19.5522 16.5523 19.9999 16 19.9999H5C4.44772 19.9999 4 19.5522 4 18.9999V7.99994Z" />
+        </svg>
       </div>
       <div class="max-w-xl space-y-3">
         <h4><span class="text-xl leading-6 font-semibold text-gray-700"> {{ item.job }} </span></h4>
         <p> <span class="text-base font-medium leading-6 text-gray-700"> Descrição: </span><span
             class="text-base leading-6 font-semibol">{{ item.jobDescription }} </span></p>
         @if(item.skills.length > 0)
-        <p> <span class="text-base font-medium leading-6 text-gray-700"> Competências: </span><span class="text-base leading-6 font-semibol"> {{ item.skills.join(", ") }} </span></p>
+        <p> <span class="text-base font-medium leading-6 text-gray-700"> Competências: </span><span
+            class="text-base leading-6 font-semibol"> {{ item.skills.join(", ") }} </span></p>
         @end
       </div>
       <div>
@@ -60,7 +96,7 @@
                   <div class="flex min-w-0 flex-1 space-x-4 pt-1.5">
                     <div>
                       <p class="text-sm text-gray-500">Dispensado em <a href="#" class="font-medium text-gray-900">
-                        <time datetime="2020-09-20">{{ item.endDate }} </time> </a> </p>
+                          <time datetime="2020-09-20">{{ item.endDate }} </time> </a> </p>
                     </div>
                   </div>
                   @end
@@ -82,7 +118,7 @@
                   <div class="flex min-w-0 flex-1 space-x-4 pt-1.5">
                     <div>
                       <p class="text-sm text-gray-500">Admitido em <a href="#" class="font-medium text-gray-900">
-                        <time datetime="2020-09-20">{{ item.startDate }} </time> </a> </p>
+                          <time datetime="2020-09-20">{{ item.startDate }} </time> </a> </p>
                     </div>
                   </div>
                 </div>
